@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+
+    <div class="col-md-8  offset-md-2">
+
+        <h2>
+            {{object.title}}
+        </h2>
+        <img class="image-fluid" src="{{ object.image.url }}" alt="{{ object.title }}">
+        <p>{{ object.text }}</p>
+
+        <a href="{% url 'lyrics:index' %}" class="btn btn-secondary">Go Back</a>
+
+    </div>
+</div>
+
+{% endblock %}
